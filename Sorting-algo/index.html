@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting Algorithms Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bonus: Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Phase 2 + Bonus: Basic CSS styling -->
+    <style>
+        /* Global styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f7;
+            color: #111827;
+        }
+
+        header,
+        footer {
+            padding: 1.5rem 1.5rem;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        header h1 {
+            margin: 0 0 0.25rem;
+            font-size: 1.75rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 1.5rem auto 2.5rem;
+            padding: 0 1.5rem;
+        }
+
+        .intro {
+            background-color: #ffffff;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .algorithm-list {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .algorithm-list ul {
+            margin: 0.5rem 0 0;
+            padding-left: 1.25rem;
+        }
+
+        .algorithm {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.5rem;
+        }
+
+        .algorithm h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .algorithm p {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .complexity {
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Code styling: Source Code Pro */
+        pre,
+        code {
+            font-family: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        pre {
+            background-color: #0b1120;
+            color: #e5e7eb;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            border: 1px solid #1f2937;
+        }
+
+        code.language-javascript {
+            display: block;
+            white-space: pre;
+        }
+
+        /* Footer styling: SFSU colors + bold */
+        footer {
+            background-color: #2a2356; /* SFSU purple-ish */
+            color: #fcb316;           /* SFSU gold-ish */
+            font-weight: bold;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffe08a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover,
+        footer a:focus {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header id="page-header">
+        <h1>Sorting Algorithms in JavaScript</h1>
+        <p>An overview of common sorting algorithms with example code snippets.</p>
+    </header>
+
+    <main id="content">
+        <section class="intro" id="overview">
+            <h2>Introduction</h2>
+            <p>
+                This page introduces several classic sorting algorithms and shows basic
+                JavaScript implementations. Each algorithm section includes a short
+                description, time complexity, and a sample implementation.
+            </p>
+            <div class="algorithm-list">
+                <strong>Algorithms on this page:</strong>
+                <ul>
+                    <li><a href="#insertion-sort">Insertion Sort</a></li>
+                    <li><a href="#bubble-sort">Bubble Sort</a></li>
+                    <li><a href="#selection-sort">Selection Sort</a></li>
+                    <!-- Add or remove items based on your actual content.txt -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Insertion Sort Section -->
+        <section id="insertion-sort" class="algorithm">
+            <h2>Insertion Sort</h2>
+            <p>
+                Insertion sort is a simple sorting algorithm that builds the sorted
+                array one item at a time. It works in a similar way to sorting
+                playing cards in your hand by inserting each card into the correct
+                position.
+            </p>
+            <p class="complexity">
+                <strong>Time complexity:</strong> Best O(n), Average O(n²), Worst O(n²)
+            </p>
+            <pre><code class="language-javascript">// Insertion Sort Implementation
+function insertionSort(arr) {
+    for (let i = 1; i &lt; arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+
+        // Move elements that are greater than key
+        // one position ahead of their current position
+        while (j &gt;= 0 &amp;&amp; arr[j] &gt; key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+    return arr;
+}
+            </code></pre>
+        </section>
+
+        <!-- Bubble Sort Section (example placeholder, adapt to content.txt) -->
+        <section id="bubble-sort" class="algorithm">
+            <h2>Bubble Sort</h2>
+            <p>
+                Bubble sort repeatedly steps through the list, compares adjacent
+                elements, and swaps them if they are out of order. The largest
+                values "bubble" to the end of the array.
+            </p>
+            <p class="complexity">
+                <strong>Time complexity:</strong> Best O(n), Average O(n²), Worst O(n²)
+            </p>
+            <pre><code class="language-javascript">// Bubble Sort Implementation
+function bubbleSort(arr) {
+    let n = arr.length;
+    let swapped = true;
+
+    while (swapped) {
+        swapped = false;
+        for (let i = 1; i &lt; n; i++) {
+            if (arr[i - 1] &gt; arr[i]) {
+                const temp = arr[i];
+                arr[i] = arr[i - 1];
+                arr[i - 1] = temp;
+                swapped = true;
+            }
+        }
+        n--;
+    }
+    return arr;
+}
+            </code></pre>
+        </section>
+
+        <!-- Selection Sort Section (example placeholder, adapt to content.txt) -->
+        <section id="selection-sort" class="algorithm">
+            <h2>Selection Sort</h2>
+            <p>
+                Selection sort works by repeatedly finding the smallest element
+                from the unsorted part of the array and moving it to the beginning
+                of the sorted part.
+            </p>
+            <p class="complexity">
+                <strong>Time complexity:</strong> Best O(n²), Average O(n²), Worst O(n²)
+            </p>
+            <pre><code class="language-javascript">// Selection Sort Implementation
+function selectionSort(arr) {
+    const n = arr.length;
+
+    for (let i = 0; i &lt; n - 1; i++) {
+        let minIndex = i;
+
+        // Find the index of the minimum element in the remaining array
+        for (let j = i + 1; j &lt; n; j++) {
+            if (arr[j] &lt; arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        // Swap the found minimum element with the first element
+        if (minIndex !== i) {
+            const temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+
+    return arr;
+}
+            </code></pre>
+        </section>
+    </main>
+
+    <footer id="page-footer">
+        <p>
+            Sorting Algorithms Webpage &middot; CSC 317 Assignment  
+            <!-- Replace the # with your real links once created -->
+            &middot; <a href="#" id="repo-link">GitHub Repository</a> |
+            <a href="#" id="deploy-link">Deployed Webpage</a>
+        </p>
+    </footer>
+</body>
+</html>

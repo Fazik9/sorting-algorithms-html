@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Sizing & Selectors Activity</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #333;
+    }
+    .parent {
+      width: 400px;
+      background: lightblue;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+    .child {
+      margin-top: 10%;
+      padding: 5%;
+      background: coral;
+    }
+    .hero {
+      width: 50vw;
+      height: 30vh;
+      background: mediumseagreen;
+      color: white;
+      font-size: 5vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .outer {
+      font-size: 20px;
+      background: lavender;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .inner {
+      font-size: 1.5em;
+      margin: 2rem;
+      background: plum;
+    }
+    .menu {
+      list-style: none;
+      padding: 0;
+    }
+    .menu > li {
+      color: red;
+      font-weight: bold;
+    }
+    .menu li li {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Sizing & Selectors Activity 🎨</h1>
+
+  <h2>🌟 Task 1: Percentage-based Padding & Margin</h2>
+  <div class="parent">
+    <div class="child">Child</div>
+  </div>
+  <p><strong>Observation:</strong> Vertical % padding/margin are based on the parent’s width, not its height.</p>
+
+  <h2>🌟 Task 2: Viewport Units (vw/vh)</h2>
+  <div class="hero">Hello, Viewport!</div>
+  <p><strong>Observation:</strong> vw/vh units scale with the browser window size, while % units scale with the parent element.</p>
+
+  <h2>🌟 Task 3: em vs rem</h2>
+  <div class="outer">
+    Outer text
+    <div class="inner">Inner text</div>
+  </div>
+  <p><strong>Observation:</strong> em depends on parent font-size, rem depends on the root font-size (usually 16px by default).</p>
+
+  <h2>🌟 Task 4: Child Combinator Selector (>)</h2>
+  <ul class="menu">
+    <li>Home</li>
+    <li>About
+      <ul>
+        <li>Team</li>
+        <li>History</li>
+      </ul>
+    </li>
+  </ul>
+  <p><strong>Observation:</strong> The <code>></code> selector targets only direct children. Nested items can be styled separately.</p>
+
+</body>
+</html>
