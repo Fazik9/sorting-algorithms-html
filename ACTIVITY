@@ -1,0 +1,127 @@
+for (let i = 0; i < 5; i++) {
+    console.log("CHECKING SERVER...");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// box model question      padding both sides
+///
+
+// assign function to a function as a variable 
+
+//function expression
+
+// assign a function to a variable
+const greet = function(name) {
+  return "Hello " + name;
+};
+
+// use it like normal
+console.log(greet("Sam"));
+
+
+
+
+
+// Midterm question:
+// function expression
+
+// ////////////////////////////////////assign a function to a variable
+const greet = function(name) {
+  return "Hello " + name;
+};
+
+// use it like normal
+console.log(greet("Sam"));
+
+
+
+
+////////////////////////////////////////////////.... NAV BAR .....///////////////////////////////
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: blue;
+      color: yellow;
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+
+    .options {
+      display: flex;
+      flex-direction:column;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div>LOGO</div>
+    <div class="options">
+      <div>Home</div>
+      <div>About</div>
+      <div>Contact</div>
+    </div>
+  </nav>
+</body>
+</html>
+</head>
+
+///////////////////////////////////... ACTIVITY 5 ...///////////////////////////////////////
+
+
+
+
+const requests = ["get", "post", "delete", "patch", "get", "put", "get", "post"];
+
+function countHttpVerbOccurrences(requestsArray) {
+  const verbCounts = {}; // Initialize an empty object to store counts
+
+  for (const verb of requestsArray) {
+    const = verb.toLowerCase(); // Ensure case-insensitive counting
+    verbCounts[lowerCaseVerb] = (verbCounts[lowerCaseVerb] || 0) + 1;
+  }
+
+  return verbCounts;
+}
+
+const httpVerbCounts = countHttpVerbOccurrences(requests);
+console.log(httpVerbCounts);
+
+
+
+
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+    // A DELETE request was detected
+    echo "This was a DELETE request.";
+    
+    // Process the request, for example, by getting the ID from the URL
+    $request_uri = explode('/', $_SERVER['REQUEST_URI']);
+    $resource_id = end($request_uri);
+    
+    // Your code to delete the resource with the given ID
+    
+} else {
+    echo "This was not a DELETE request.";
+}
+
+?>
