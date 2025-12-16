@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorting Algorithms</title>
+  <meta name="description" content="Sorting algorithm notes and code examples from content.txt" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header id="top" class="site-header">
+    <div class="container">
+      <h1 class="page-title">Sorting Algorithms</h1>
+      <p class="subtitle">HTML5 structure + basic CSS styling (Phase 2).</p>
+
+      <div class="nav">
+        <p class="nav-label">Jump to:</p>
+        <p class="nav-links">
+          <a class="nav-link" href="#insertion-sort">Insertion Sort</a>
+          <a class="nav-link" href="#footer">Footer</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="content">
+    <div id="insertion-sort" class="card algorithm">
+      <h2 class="section-title">Insertion Sort</h2>
+      <p class="text">
+        Insertion sort is a simple sorting algorithm that builds the sorted
+        array one item at a time. It is much like sorting playing cards in
+        your hands.
+      </p>
+
+      <pre class="code-block"><code class="language-javascript">// Insertion Sort Implementation
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let key = arr[i];
+    let j = i - 1;
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = key;
+  }
+  return arr;
+}</code></pre>
+    </div>
+
+    <div id="section-2" class="card algorithm">
+      <h2 class="section-title">Next Algorithm Title</h2>
+      <p class="text">Paste the next paragraph(s) from content.txt here.</p>
+      <pre class="code-block"><code class="language-javascript">// Paste the next code block here</code></pre>
+    </div>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-text">CSC 317 Sorting Algorithms Page</p>
+      <p class="footer-text"><a class="footer-link" href="#top">Back to top</a></p>
+    </div>
+  </footer>
+</body>
+</html>
